@@ -1,0 +1,9 @@
+[submodule "Api-gateway"]
+	path = Api-gateway
+	url = https://github.com/Himanthajaga/Capstone-Project-Platform-Api-Gateway.git
+[submodule "Config-Server"]
+	path = Config-Server
+	url = https://github.com/Himanthajaga/Capstone-Project-Platform-Config-Server.git
+[submodule "platform-registry"]
+	path = platform-registry
+	url = https://github.com/Himanthajaga/Capstone-Project-Platform-Service-Registry.git
