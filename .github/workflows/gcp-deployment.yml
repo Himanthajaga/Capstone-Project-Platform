@@ -34,7 +34,7 @@ jobs:
         - name: Connect with the vm-platform-seed through SSH
           run: >
               gcloud compute ssh ${{ env.VM_NAME }} --zone ${{ env.ZONE }}
-              --command='sudo systemctl restart platform-seed'
+              --command "echo 'Connected to the vm-platform-seed'"
             
             
             
