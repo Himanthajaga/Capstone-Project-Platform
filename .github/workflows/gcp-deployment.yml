@@ -24,7 +24,7 @@ jobs:
 
 
         - name: Start the vm-platform-seed
-          run: gcloud compute instances start vm-platform-seed
+          run: gcloud compute instances start vm-platform-seed --zone asia-southeast1-a
 
 
 
