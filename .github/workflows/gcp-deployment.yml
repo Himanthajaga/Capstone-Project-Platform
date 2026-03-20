@@ -6,6 +6,11 @@ jobs:
       runs-on: ubuntu-latest
 
 
+      env:
+        VM_NAME: vm-platform-seed
+        ZONE: asia-southeast1-a
+
+
       permissions:
         contents: 'read'
         id-token: 'write'
@@ -24,7 +29,12 @@ jobs:
 
 
         - name: Start the vm-platform-seed
-          run: gcloud compute instances start vm-platform-seed --zone asia-southeast1-a
+          run: gcloud compute instances start ${{ env.VM_NAME }} --zone ${{ env.ZONE }}
 
-
-
+        - name: Connect with the vm-platform-seed through SSH
+          run: >
+              gcloud compute ssh ${{ env.VM_NAME }} --zone ${{ env.ZONE }}
+              --command='sudo systemctl restart platform-seed'
+            
+            
+            
