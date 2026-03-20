@@ -11,5 +11,9 @@ jobs:
           run: echo "Starting GCP Deployment Process"
 
 
+        - name: Checkout Repository
+          uses: actions/checkout@v6.0.0
+
+
         - name: Second Step of Deployment
           run: echo "Finalizing the GCP Deployment Process"
