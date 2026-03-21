@@ -32,11 +32,13 @@ jobs:
         - name: Start the vm-platform-seed
           run: gcloud compute instances start ${{ env.VM_NAME }} --zone=${{ env.ZONE }}
 
-        - name: Connect with the vm-platform-seed through SSH
+        - name: Connect with the vm-platform-seed through SSH,pull the latest code and build the project
           run: >
               gcloud compute ssh ${{env.USER_NAME}}@${{ env.VM_NAME }} --zone=${{ env.ZONE }}
               --command "echo 'Connected to the vm-platform-seed successfully!' &&
-              pwd && whoami
+              cd Capstone-Project-Platform/ &&
+              git pull --recurse-submodules &&
+              mvn clean package
               "
             
             
